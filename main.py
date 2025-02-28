@@ -1,16 +1,25 @@
 class Solution(object):
-    def containsDuplicate(self, nums):
-        if len(set(nums)) == len(nums):
-            return False
-        else:
-            return True
+    def isAnagram(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        dicts = [0] * 26
+        for char in s:
+            dicts[ord(char) - ord("a")] += 1
+        for chars in t:
+            dicts[ord(chars) - ord("a")] -= 1
+        for m in dicts:
+            if m != 0:
+                return False
+        return True
 
 
-nums_1 = [1, 2, 3, 4]
+nums_1 = "cbcdea"
 
-nums_2 = [1, 2, 2, 3, 4]
+nums_2 = "cbcdea"
 
 solution = Solution()
 
-print(solution.containsDuplicate(nums_1))
-print(solution.containsDuplicate(nums_2))
+print(solution.isAnagram(nums_1, nums_2))
