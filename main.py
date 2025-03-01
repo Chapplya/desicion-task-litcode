@@ -15,5 +15,5 @@ nums_2 = [1, 2, 2, 3, 4]
 
 solution = Solution()
 
-print(solution.containsDuplicate(nums_1))   
+print(solution.containsDuplicate(nums_1))
 print(solution.containsDuplicate(nums_2))
