@@ -1,3 +1,6 @@
+from collections import Counter
+
+
 class Solution(object):
     def containsDuplicate(self, nums):
         numbers = set()
@@ -7,11 +10,29 @@ class Solution(object):
             numbers.add(elem)
         return False
 
+    def isAnagram_1(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        dicts = [0] * 26
+        for char in s:
+            dicts[ord(char) - ord("a")] += 1
+        for chars in t:
+            dicts[ord(chars) - ord("a")] -= 1
+        for m in dicts:
+            if m != 0:
+                return False
+        return True
 
-nums_1 = [1, 2, 3, 4]
+    def isAnagram_2(self, s, t):
+        num_to_idx_1 = Counter(s)
+        num_to_idx_2 = Counter(t)
+        return num_to_idx_1 == num_to_idx_2
 
-nums_2 = [1, 2, 2, 3, 4]
 
 solution = Solution()
 
-# assert solution.containsDuplicate(nums_1)
+
+solution = Solution()
