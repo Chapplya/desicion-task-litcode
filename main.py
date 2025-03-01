@@ -27,9 +27,9 @@ class Solution(object):
         return True
 
     def isAnagram_2(self, s, t):
-        dict_1 = Counter(s)
-        dict_2 = Counter(t)
-        return dict_1 == dict_2
+        num_to_idx_1 = Counter(s)
+        num_to_idx_2 = Counter(t)
+        return num_to_idx_1 == num_to_idx_2
 
 
 solution = Solution()
