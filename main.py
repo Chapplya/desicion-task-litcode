@@ -1,5 +1,16 @@
+from collections import Counter
+
+
 class Solution(object):
-    def isAnagram(self, s, t):
+    def containsDuplicate(self, nums):
+        numbers = set()
+        for elem in numbers:
+            if elem in numbers:
+                return True
+            numbers.add(elem)
+        return False
+
+    def isAnagram_1(self, s, t):
         """
         :type s: str
         :type t: str
@@ -14,21 +25,14 @@ class Solution(object):
             if m != 0:
                 return False
         return True
-    
-    def containsDuplicate(self, nums):
-        numbers = set()
-        for elem in numbers:
-            if elem in numbers:
-                return True
-            numbers.add(elem)
-        return False
 
+    def isAnagram_2(self, s, t):
+        dict_1 = Counter(s)
+        dict_2 = Counter(t)
+        return dict_1 == dict_2
 
-str_1 = "cbcdea"
-
-str_2 = "cbcdea"
 
 solution = Solution()
 
-print(solution.isAnagram(str_1, str_2))
-# assert solution.containsDuplicate(nums_1)
+
+solution = Solution()
