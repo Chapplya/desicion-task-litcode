@@ -1,11 +1,10 @@
 class Solution(object):
     def containsDuplicate(self, nums):
-        sets = set()
-        for elem in nums:
-            if elem in sets:
+        numbers = set()
+        for elem in numbers:
+            if elem in numbers:
                 return True
-            else:
-                sets.add(elem)
+            numbers.add(elem)
         return False
 
 
@@ -15,5 +14,4 @@ nums_2 = [1, 2, 2, 3, 4]
 
 solution = Solution()
 
-print(solution.containsDuplicate(nums_1))
-print(solution.containsDuplicate(nums_2))
+# assert solution.containsDuplicate(nums_1)
