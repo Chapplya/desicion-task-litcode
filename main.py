@@ -1,17 +1,16 @@
-from collections import defaultdict
+from collections import Counter
+
 
 class Solution:
-    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
-        anagrams = defaultdict(list)
+    def topKFrequent(self, nums: list[int], k: int) -> list[int]:
+        dicts = Counter(nums)
+        sorted_dicts = sorted(dicts.keys(), key=lambda x: dicts[x], reverse=True)
+        return sorted_dicts[:k]
 
-        for elem in strs:
-            sort_s = ''.join(sorted(elem))
-            anagrams[sort_s].append(elem)
-        
-        return list(anagrams.values())
 
 settings = Solution()
 
-strs = ["act","pots","tops","cat","stop","hat"]
+nums = [-9, -2, -3, -3]
+k = 2
 
-print(settings.groupAnagrams(strs))
+print(settings.topKFrequent(nums, k))
