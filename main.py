@@ -1,19 +1,18 @@
 class Solution(object):
-    def containsDuplicate(self, nums):
-        sets = set()
-        for elem in nums:
-            if elem in sets:
-                return True
-            else:
-                sets.add(elem)
-        return False
+    def twoSum(self, nums, target):
+        dicts = {}
+        for i in range(0, len(nums)):
+            dicts[nums[i]] = i
+        for i in range(0, len(nums)):
+            diff = target - nums[i]
+            if diff in dicts and dicts[diff] != i:
+                return [i, dicts[diff]]
 
 
 nums_1 = [1, 2, 3, 4]
 
-nums_2 = [1, 2, 2, 3, 4]
 
 solution = Solution()
 
-print(solution.containsDuplicate(nums_1))
-print(solution.containsDuplicate(nums_2))
+
+print(solution.twoSum(nums_1, 5))
