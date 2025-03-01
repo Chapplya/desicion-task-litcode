@@ -16,10 +16,10 @@ class Solution(object):
         return True
 
 
-nums_1 = "cbcdea"
+str_1 = "cbcdea"
 
-nums_2 = "cbcdea"
+str_2 = "cbcdea"
 
 solution = Solution()
 
-print(solution.isAnagram(nums_1, nums_2))
+print(solution.isAnagram(str_1, str_2))
