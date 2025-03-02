@@ -1,15 +1,16 @@
 from collections import defaultdict, Counter
 
+
 class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
         anagrams = defaultdict(list)
 
         for elem in strs:
-            sort_s = ''.join(sorted(elem))
+            sort_s = "".join(sorted(elem))
             anagrams[sort_s].append(elem)
-        
+
         return list(anagrams.values())
-    
+
     def containsDuplicate(self, nums):
         numbers = set()
         for elem in numbers:
@@ -44,8 +45,13 @@ class Solution:
                 del num_to_idx_1[elem]
         return not num_to_idx_1
 
-
-solution = Solution()
+    def twoSum(self, nums, target):
+        num_to_idx = {}
+        for index, elem in enumerate(nums):
+            diff = target - elem
+            if diff in num_to_idx:
+                return [index, num_to_idx[diff]]
+            num_to_idx[elem] = index
 
 
 solution = Solution()
