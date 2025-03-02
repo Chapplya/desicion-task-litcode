@@ -28,8 +28,14 @@ class Solution(object):
 
     def isAnagram_2(self, s, t):
         num_to_idx_1 = Counter(s)
-        num_to_idx_2 = Counter(t)
-        return num_to_idx_1 == num_to_idx_2
+        for elem in t:
+            if elem not in num_to_idx_1:
+                return False
+            num_to_idx_1[elem] -= 1
+            if num_to_idx_1[elem] == 0:
+                del num_to_idx_1[elem]
+        return not num_to_idx_1
+            
 
 
 solution = Solution()
