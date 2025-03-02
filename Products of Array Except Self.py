@@ -10,8 +10,9 @@ class Solution:
             const = 1
         return result
 
+
 settings = Solution()
 
-nums = [1,2,4,6]
+nums = [1, 2, 4, 6]
 
-print (settings.productExceptSelf(nums))
+print(settings.productExceptSelf(nums))
