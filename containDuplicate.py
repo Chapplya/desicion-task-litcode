@@ -55,4 +55,3 @@ class Solution:
 
 
 solution = Solution()
-
