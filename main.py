@@ -9,9 +9,20 @@ class Solution:
             anagrams[sort_s].append(elem)
         
         return list(anagrams.values())
+    
+    def containsDuplicate(self, nums):
+        numbers = set()
+        for elem in numbers:
+            if elem in numbers:
+                return True
+            numbers.add(elem)
+        return False
 
-settings = Solution()
 
-strs = ["act","pots","tops","cat","stop","hat"]
+nums_1 = [1, 2, 3, 4]
 
-print(settings.groupAnagrams(strs))
+nums_2 = [1, 2, 2, 3, 4]
+
+solution = Solution()
+
+# assert solution.containsDuplicate(nums_1)
