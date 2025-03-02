@@ -35,7 +35,6 @@ class Solution(object):
             if num_to_idx_1[elem] == 0:
                 del num_to_idx_1[elem]
         return not num_to_idx_1
-            
 
 
 solution = Solution()
