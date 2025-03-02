@@ -56,6 +56,3 @@ class Solution:
 
 solution = Solution()
 
-
-print(solution.twoSum(nums_1, 5))
-# assert solution.containsDuplicate(nums_1)
