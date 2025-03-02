@@ -1,12 +1,11 @@
 class Solution(object):
     def twoSum(self, nums, target):
-        dicts = {}
-        for i in range(0, len(nums)):
-            dicts[nums[i]] = i
-        for i in range(0, len(nums)):
-            diff = target - nums[i]
-            if diff in dicts and dicts[diff] != i:
-                return [i, dicts[diff]]
+        num_to_idx = {}
+        for index, elem in enumerate(nums):
+            diff = target - elem
+            if diff in num_to_idx:
+                return [index, num_to_idx[diff]]
+            num_to_idx[elem] = index
 
 
 nums_1 = [1, 2, 3, 4]
