@@ -1,18 +1,24 @@
 class Solution:
     def productExceptSelf(self, nums: list[int]) -> list[int]:
-        result = []
-        const = 1
-        for inx_1 in range(len(nums)):
-            for inx_2 in range(len(nums)):
-                if inx_2 != inx_1:
-                    const *= nums[inx_2]
-            result.append(const)
-            const = 1
-        return result
+        prod, zero_cnt = 1, 0
+        for num in nums:
+            if num:
+                print (num)
+                prod *= num
+            else:
+                zero_cnt +=  1
+        if zero_cnt > 1: return [0] * len(nums)
+
+        res = [0] * len(nums)
+        for i, c in enumerate(nums):
+            if zero_cnt: 
+                res[i] = 0 if c != 0 else prod
+            else: res[i] = prod // c
+        return res
 
 
 settings = Solution()
 
-nums = [1, 2, 4, 6]
+nums = [1, 2, 4, 6, 0]
 
 print(settings.productExceptSelf(nums))
