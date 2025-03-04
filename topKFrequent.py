@@ -8,7 +8,8 @@ class Solution:
         sorted_dicts = sorted(dicts.keys(), key=lambda x: dicts[x], reverse=True)
         return sorted_dicts[:k]
         """
-        if k ==0 or nums == []: return False
+        if k == 0 or nums == []:
+            return False
         count = Counter(nums)
 
         max_freq = max(count.values())
