@@ -8,6 +8,7 @@ class Solution:
         sorted_dicts = sorted(dicts.keys(), key=lambda x: dicts[x], reverse=True)
         return sorted_dicts[:k]
         """
+        if k ==0 or nums == []: return False
         count = Counter(nums)
 
         max_freq = max(count.values())
@@ -26,7 +27,7 @@ class Solution:
 
 settings = Solution()
 
-nums = [-9, -2, -3, -3]
+nums = []
 k = 2
 
 print(settings.topKFrequent(nums, k))
